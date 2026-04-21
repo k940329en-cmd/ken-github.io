@@ -1,11 +1,10 @@
-<index.html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個人履歷 - 你的名字</title>
     <style>
-        /* 基本樣式設定 */
         body {
             font-family: "Microsoft JhengHei", Arial, sans-serif;
             line-height: 1.6;
@@ -22,7 +21,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             border-radius: 8px;
         }
-        /* 標題區 */
         header {
             text-align: center;
             border-bottom: 2px solid #3498db;
@@ -31,19 +29,14 @@
         }
         h1 { margin: 0; color: #2c3e50; }
         .contact-info { color: #7f8c8d; margin-top: 10px; }
-        
-        /* 區塊標題 */
         h2 {
             color: #3498db;
             border-left: 5px solid #3498db;
             padding-left: 15px;
             margin-top: 30px;
         }
-        /* 清單樣式 */
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
-        
-        /* 響應式設計（手機觀看也OK） */
         @media (max-width: 600px) {
             .container { margin: 10px; padding: 20px; }
         }
@@ -53,45 +46,34 @@
 
 <div class="container">
     <header>
-        <h1>你的名字 (Name)</h1>
+        <h1>你的名字</h1>
         <div class="contact-info">
-            電話：0912-345-678 | Email：example@email.com<br>
-            GitHub: github.com/k940329en-cmd
+            Email：your-email@example.com | GitHub: k940329en-cmd
         </div>
     </header>
 
     <section>
         <h2>關於我</h2>
-        <p>
-            這裡寫一段簡單的自我介紹。例如：我是一位熱愛學習新技術的學生，目前正在學習 AI 應用與網頁開發，目標是成為一名全端工程師。
-        </p>
+        <p>這是我在 AI 課程中製作的第一個個人履歷網頁，目前正在學習 GitHub 與 Cloudflare 的整合應用。</p>
     </section>
 
     <section>
         <h2>教育背景</h2>
         <ul>
-            <li><strong>某某大學 - 資訊管理系</strong> (2022 - 2026)</li>
-            <li>相關課程：網頁設計、資料庫管理、人工智慧導論</li>
+            <li>大學名稱 - 資訊相關科系</li>
         </ul>
     </section>
 
     <section>
         <h2>專業技能</h2>
         <ul>
-            <li>前端開發：HTML5, CSS3, JavaScript</li>
-            <li>版本控制：Git, GitHub</li>
-            <li>雲端託管：Cloudflare, GitHub Pages</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>作品專案</h2>
-        <ul>
-            <li><strong>個人履歷網頁</strong>：使用 GitHub Pages 與 Cloudflare 進行自動化部署。</li>
-            <li><strong>其他專案</strong>：描述你曾經做過的小作業或實作。</li>
+            <li>網頁基礎：HTML, CSS</li>
+            <li>工具應用：GitHub, Cloudflare</li>
         </ul>
     </section>
 </div>
 
 </body>
 </html>
+    
+     
