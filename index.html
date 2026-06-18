@@ -17,24 +17,25 @@
         body {
             background-color: #05050a;
             color: #ffffff;
-            overflow: hidden;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow-x: hidden; /* 防止左右出現滾動條 */
         }
 
-        /* 粒子背景容器 */
+        /* 粒子背景容器（讓它允許點擊穿透） */
         #tsparticles {
-            position: absolute;
+            position: fixed;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
             z-index: 1;
+            pointer-events: none; /* 🌟 讓滑鼠點擊可以穿透粒子層 */
         }
 
-        /* 前景內容卡片（玻璃擬態 + 霓虹外框） */
+        /* 前景內容卡片（確保它可以被點擊） */
         .container {
             position: relative;
             z-index: 10;
@@ -48,6 +49,7 @@
             text-align: center;
             max-width: 500px;
             width: 90%;
+            pointer-events: auto; /* 🌟 確保卡片和裡面的按鈕可以被正常點擊 */
         }
 
         /* 霓虹文字效果 */
@@ -79,6 +81,8 @@
             box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
             background: transparent;
             cursor: pointer;
+            position: relative;
+            z-index: 20; /* 🌟 確保按鈕在最上層 */
         }
 
         .btn:hover {
@@ -98,45 +102,34 @@
     <div class="container">
         <h1>KEN_PROJECT.EXE</h1>
         <p>歡迎來到我的科技感個人空間。目前網站正在建構中，核心粒子矩陣與霓虹協議已啟動...</p>
-        <a href="#" class="btn">ENTER SYSTEM</a>
+        <!-- 這裡可以把 # 改成你想連過去的網址，例如你的 IG 或 其他頁面 -->
+        <a href="https://github.com/k940329en-cmd" class="btn">ENTER SYSTEM</a>
     </div>
 
     <!-- 引入 tsParticles 粒子庫 -->
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@2/tsparticles.preset.links.bundle.min.js"></script>
     <script>
-        // 初始化粒子特效
         tsParticles.load("tsparticles", {
             preset: "links",
-            background: {
-                color: "transparent"
-            },
+            background: { color: "transparent" },
             particles: {
-                color: {
-                    value: "#00f3ff" /* 粒子顏色：青色 */
-                },
+                color: { value: "#00f3ff" },
                 links: {
-                    color: "#00f3ff", /* 連線顏色 */
+                    color: "#00f3ff",
                     distance: 150,
                     enable: true,
                     opacity: 0.4,
                     width: 1
                 },
-                move: {
-                    enable: true,
-                    speed: 1.5
-                },
-                size: {
-                    value: { min: 1, max: 3 }
-                },
-                opacity: {
-                    value: { min: 0.3, max: 0.7 }
-                }
+                move: { enable: true, speed: 1.5 },
+                size: { value: { min: 1, max: 3 } },
+                opacity: { value: { min: 0.3, max: 0.7 } }
             },
             interactivity: {
                 events: {
                     onHover: {
                         enable: true,
-                        mode: "grab" /* 滑鼠靠近會吸附連線 */
+                        mode: "grab"
                     }
                 }
             }
