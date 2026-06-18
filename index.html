@@ -3,76 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人履歷 - 何宥廣</title>
+    <title>Ken's Cyber Space</title>
+    <!-- 引入字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: "Microsoft JhengHei", Arial, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
+            box-sizing: border-box;
+            font-family: 'Share Tech Mono', monospace, sans-serif;
         }
+
+        body {
+            background-color: #05050a;
+            color: #ffffff;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 粒子背景容器 */
+        #tsparticles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* 前景內容卡片（玻璃擬態 + 霓虹外框） */
         .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 40px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        header {
+            position: relative;
+            z-index: 10;
+            background: rgba(10, 10, 25, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.15), inset 0 0 15px rgba(0, 243, 255, 0.1);
             text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            max-width: 500px;
+            width: 90%;
         }
-        h1 { margin: 0; color: #2c3e50; }
-        .contact-info { color: #7f8c8d; margin-top: 10px; }
-        h2 {
-            color: #3498db;
-            border-left: 5px solid #3498db;
-            padding-left: 15px;
-            margin-top: 30px;
+
+        /* 霓虹文字效果 */
+        h1 {
+            font-size: 2.5rem;
+            color: #00f3ff;
+            text-shadow: 0 0 8px rgba(0, 243, 255, 0.6), 0 0 20px rgba(0, 243, 255, 0.4);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
         }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        @media (max-width: 600px) {
-            .container { margin: 10px; padding: 20px; }
+
+        p {
+            color: #8a99ad;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* 科技感按鈕 */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            color: #ff007f;
+            border: 1px solid #ff007f;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #ff007f;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.6), 0 0 40px rgba(255, 0, 127, 0.4);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>何宥廣</h1>
-        <div class="contact-info">
-            Email：your-email@example.com | GitHub: k940329en-cmd
-        </div>
-    </header>
+    <!-- 粒子背景 -->
+    <div id="tsparticles"></div>
 
-    <section>
-        <h2>關於我</h2>
-        <p>這是我在 AI 課程中製作的第一個個人履歷網頁，目前正在學習 GitHub 與 Cloudflare 的整合應用。</p>
-    </section>
+    <!-- 網頁核心內容 -->
+    <div class="container">
+        <h1>KEN_PROJECT.EXE</h1>
+        <p>歡迎來到我的科技感個人空間。目前網站正在建構中，核心粒子矩陣與霓虹協議已啟動...</p>
+        <a href="#" class="btn">ENTER SYSTEM</a>
+    </div>
 
-    <section>
-        <h2>教育背景</h2>
-        <ul>
-            <li>國立勤益科技大學 - 智慧自動化工程系</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>專業技能</h2>
-        <ul>
-            <li>網頁基礎：HTML, CSS</li>
-            <li>工具應用：GitHub, Cloudflare</li>
-        </ul>
-    </section>
-</div>
-
+    <!-- 引入 tsParticles 粒子庫 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@2/tsparticles.preset.links.bundle.min.js"></script>
+    <script>
+        // 初始化粒子特效
+        tsParticles.load("tsparticles", {
+            preset: "links",
+            background: {
+                color: "transparent"
+            },
+            particles: {
+                color: {
+                    value: "#00f3ff" /* 粒子顏色：青色 */
+                },
+                links: {
+                    color: "#00f3ff", /* 連線顏色 */
+                    distance: 150,
+                    enable: true,
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1.5
+                },
+                size: {
+                    value: { min: 1, max: 3 }
+                },
+                opacity: {
+                    value: { min: 0.3, max: 0.7 }
+                }
+            },
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: true,
+                        mode: "grab" /* 滑鼠靠近會吸附連線 */
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
     
